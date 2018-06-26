@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>webpage</title>
+	<link rel="stylesheet" type="text/css" href="a.css">
+</head>
+<body>
+	<p id="demo" onclick="sayHi()"></p>
+	<button class="btn" onclick="MyFunction()">try</button>
+	<script type="text/javascript">
+		alert('hi');
+		function MyFunction()
+		{
+			var msg = document.getElementById("demo").innerHTML = "hi";
+		}
+
+		function sayHi() {
+			alert('You clicked on p tag');
+		}
+	</script>
+</body>
+</html>
