@@ -11,6 +11,7 @@
 	function reverseNumber() {
 		var num = document.getElementById('number').value;
 		var rev = 0;
+		var temp = num;
 		while(num > 0) {
 			var rem = parseInt((num % 10));
 			rev = parseInt((rev * 10) + rem);
@@ -18,6 +19,14 @@
 		}
 		var spanTag = document.getElementById('answer');
 		spanTag.innerHTML = rev;
+		if(rev == temp)
+		{
+			alert("Palindrome");
+		}
+		else
+		{
+			alert("not Palindrome");
+		}
 	}
 </script>
 </body>
