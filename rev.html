@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reverse</title>
+</head>
+<body>
+<input type="number" id`="number">
+<button onclick="ReverseNumber()">ReverseNumber</button>
+<div id="answer">Answer comes here</div>
+<div id="condtion">condtion comes here</div>
+
+<script type="text/javascript">
+	function reverseNumber()
+	{
+		 var num = document.getElementById("number").value;
+		 var rev = 0;
+		 var temp = num;
+		 while(num > 0)
+		 {
+		 	var rem = parseInt(num % 10);
+		 	rev = parseInt((rev * 10) + rem);
+		 	num = parseInt(num / 10);
+		 }
+		 var divTag = document.getElementById("answer");
+		 divTag.innerHTML = rev;
+		 
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tak Toe Game</title>
+	<style type="text/css">
+		button {
+			margin: 0;
+			height: 50px;
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+<div id="board">
+</div>
+<script type="text/javascript">
+	var n = 3;
+	var board = document.getElementById('board');
+	var playerX = 'X';
+	var playerO = 'O';
+	var currentPlayer = playerX;
+	var playingBoard = [
+		[0,0,0],
+		[0,0,0],
+		[0,0,0]
+	];
+
+	for (var i = 0; i < n; i++) {
+		for(var j = 0; j < n; j++) {
+			var button = document.createElement('button');
+			button.id = i + '' + j;
+			button.onclick = function () { onButtonClick(this) };
+			board.append(button);
+		}
+		var line = document.createElement('br');
+		board.append(line);
+	}
+
+
+	function onButtonClick(argument) {
+		argument.innerHTML = currentPlayer;
+		id = argument.id.split('');
+		if(playingBoard[id[0]][id[1]] !==0) {
+			alert('Please click only on empty position');
+		} else {
+			playingBoard[id[0]][id[1]] = currentPlayer;
+			switchPlayer(currentPlayer);
+		}
+	}
+
+	function switchPlayer(cP) {
+		if (cP === playerX) {
+			currentPlayer = playerO;
+		}
+
+		if(cP === playerO) {
+			currentPlayer = playerX;
+		}
+	}
+</script>
+</body>
+</html>

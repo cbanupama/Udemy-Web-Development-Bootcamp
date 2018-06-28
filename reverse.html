@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reserver a number</title>
+</head>
+<body>
+<input type="number" id="number">
+<button onclick="reverseNumber()">Reverse</button>
+<div id="answer">Answer goes here</div>
+<script type="text/javascript">
+	function reverseNumber() {
+		var num = document.getElementById('number').value;
+		var rev = 0;
+		while(num > 0) {
+			var rem = parseInt((num % 10));
+			rev = parseInt((rev * 10) + rem);
+			num = parseInt(num / 10);
+		}
+		var spanTag = document.getElementById('answer');
+		spanTag.innerHTML = rev;
+	}
+</script>
+</body>
+</html>

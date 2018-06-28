@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number of Digit</title>
+</head>
+<body>
+	<input type="Number" id="number">
+	<button onclick="numberDigit()" >Number of Digit</button>
+	<div id="answer">Answer comes here</div>
+	<script type="text/javascript">
+		function numberDigit()
+		{
+			var num = document.getElementById("number").value;
+			var count = 0;
+			while(num > 0)
+			{
+				var rem =parseInt(num % 10);
+				count++;
+				num = parseInt(num / 10);
+			}
+			var divTag = document.getElementById("answer");
+			divTag.innerHTML = count;
+
+		}
+
+	</script>
+</body>
+</html>
